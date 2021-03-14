@@ -158,7 +158,7 @@ func (r *Receiver) handlePDU() {
 loop:
 	for {
 		p, err := r.cl.Read()
-		if err != nil {
+		if p == nil || err != nil {
 			break
 		}
 
